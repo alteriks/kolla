@@ -45,6 +45,7 @@ RUN sed -i '1 i include /var/lib/cinder/volumes/*' /etc/tgt/targets.conf
 
 COPY cinder_sudoers /etc/sudoers.d/kolla_cinder_volume_sudoers
 COPY extend_start.sh /usr/local/bin/kolla_cinder_extend_start
+COPY eternus_dx_common.py /usr/lib/python2.7/site-packages/cinder/volume/drivers/fujitsu/eternus_dx_common.py
 
 RUN chmod 750 /etc/sudoers.d \
     && chmod 440 /etc/sudoers.d/kolla_cinder_volume_sudoers \
