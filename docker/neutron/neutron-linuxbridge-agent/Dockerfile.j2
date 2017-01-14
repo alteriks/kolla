@@ -33,6 +33,8 @@ MAINTAINER {{ maintainer }}
 
 {{ macros.install_packages(neutron_linuxbridge_agent_packages | customizable("packages")) }}
 
+COPY iptables_firewall.py /usr/lib/python2.7/site-packages/neutron/agent/linux/iptables_firewall.py
+
 {% block neutron_linuxbridge_agent_footer %}{% endblock %}
 {% block footer %}{% endblock %}
 {{ include_footer }}
